@@ -1,7 +1,7 @@
 # Python
 __pycache__/
 *.pyc
-.venv/
+.venv*/
 dist/
 build/
 *.egg-info/
@@ -9,3 +9,7 @@ build/
 # Data & Logs
 /data/
 *.log
+
+# Proprietary prompts
+qms/prompts/*.md
+qms/workflows/*.yaml
