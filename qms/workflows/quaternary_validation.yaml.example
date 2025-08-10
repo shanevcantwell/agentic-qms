@@ -1,0 +1,42 @@
+# qms/workflows/quaternary_validation.yaml
+
+workflow_name: "Quaternary Query Validation"
+description: "A multi-agent workflow to validate, enrich, and respond to a user query."
+
+steps:
+  - name: "Step 1: Initial Query Analysis"
+    agent: "analyst_agent"
+    task:
+      description: "Analyze the user's query for intent and key entities."
+      query_text: "What were our sales figures for product SKU-12345 in the last quarter?"
+      metadata:
+        user_id: "user-abc-789"
+        session_id: "session-xyz-123"
+
+  - name: "Step 2: Data Retrieval"
+    agent: "retrieval_agent"
+    task:
+      description: "Retrieve sales data based on the analyzed query."
+      # In a real workflow, the 'query_details' would be the output from Step 1.
+      query_details:
+        product_sku: "SKU-12345"
+        time_period: "Q3-2024"
+        metrics: ["sales_figures", "units_sold"]
+
+  - name: "Step 3: Response Generation"
+    agent: "response_synthesis_agent"
+    task:
+      description: "Synthesize a natural language response from the retrieved data."
+      # In a real workflow, the 'retrieved_data' would be the output from Step 2.
+      retrieved_data:
+        - date: "2024-07-15"
+          sales: 5430.50
+          units: 108
+        - date: "2024-08-22"
+          sales: 8120.00
+          units: 162
+        - date: "2024-09-10"
+          sales: 6500.75
+          units: 130
+      original_query: "What were our sales figures for product SKU-12345 in the last quarter?"
+
