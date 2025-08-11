@@ -1,0 +1,23 @@
+graph TD
+    subgraph "User Experience Layer (Low Friction)"
+        U[Human User] -- "Natural Language Goal<br/><i>'Visualize the QMS architecture'</i>" --> CoS(<b>Chief of Staff / Facilitator</b>);
+    end
+
+    subgraph "QMS Engine (High Complexity)"
+        O(Orchestrator);
+        D(Dispatcher);
+        S1[Agent: Systems Architect];
+        S2[Agent: Web Builder];
+    end
+    
+    CoS -- "1. Deconstructs Goal &<br/>Designs Workflow" --> O;
+    O -- "2. Executes Workflow via" --> D;
+    D -- "3. Routes Tasks to" --> S1;
+    S1 -- "Produces Artifact" --> D;
+    D -- "Routes Artifact to" --> S2;
+    S2 -- "Produces Final HTML" --> D;
+    D -- "4. Returns Final Result" --> CoS;
+    CoS -- "Single, Verified Artifact<br/><i>'Here is the link to the visualization.'</i>" --> U;
+
+    style U fill:#D5F5E3,stroke:#2ECC71
+    style CoS fill:#D6EAF8,stroke:#3498DB
