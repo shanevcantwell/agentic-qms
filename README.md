@@ -1,3 +1,5 @@
+[svc: I'm cutting my teeth on agents in the repo langgraph-agentic-scaffold but very excited to get back to experimenting with this structure](https://github.com/shanevcantwell/langgraph-agentic-scaffold)
+
 # Agentic Quality Management System (AQMS)
 
 This repository implements a multi-agent framework for robust AI synthesis based on the principles of ISO 9001. It is designed not as a simple command hierarchy, but as a resilient, self-auditing quality management system capable of continuous, evidence-based improvement.
